@@ -6,10 +6,28 @@ export const initialState = {
       date: '2023-12-09',
       name: 'wert',
       category: 'Food',
-      price: '233.30',
+      price: 2000.3,
       payment: 'Cash',
       transaction: 'Expense',
       id: 'iuiu34322',
+    },
+    {
+      date: '2023-12-09',
+      name: 'wert',
+      category: 'Food',
+      price: 300.3,
+      payment: 'Cash',
+      transaction: 'Income',
+      id: 'iuiu3432278',
+    },
+    {
+      date: '2023-12-09',
+      name: 'wert',
+      category: 'Food',
+      price: 300.3,
+      payment: 'Cash',
+      transaction: 'Income',
+      id: 'iuiu343227878',
     },
   ],
 };
@@ -35,8 +53,33 @@ const transactionSlice = createSlice({
         return item;
       });
     },
+    getEachTotal: (state) => {
+      let totalIncome = 0;
+      let totalExpense = 0;
+
+      state.transactions.map((item) =>
+        item.transaction === 'Expense'
+          ? (totalExpense = totalExpense + Number(item.price))
+          : (totalIncome = totalIncome + Number(item.price))
+      );
+
+      state.totalIncome = totalIncome;
+      state.totalExpense = totalExpense;
+    },
+    getBalance: (state) => {
+      let difference;
+      difference = state.totalIncome - state.totalExpense;
+      let balance = difference.toFixed(2);
+      state.balance = balance;
+      // console.log(state.balance);
+    },
   },
 });
-export const { addTransaction, deleteTransaction, editTransaction } =
-  transactionSlice.actions;
+export const {
+  addTransaction,
+  deleteTransaction,
+  editTransaction,
+  getEachTotal,
+  getBalance,
+} = transactionSlice.actions;
 export default transactionSlice.reducer;

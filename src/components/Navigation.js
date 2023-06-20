@@ -1,30 +1,36 @@
-import { Row } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Col from 'react-bootstrap/Col';
 import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <>
-      <Navbar style={{ backgroundColor: 'green' }} data-bs-theme="dark">
-        <Container>
-          <Row>
-            <Nav className="me-auto">
-              <NavLink to="/">Home</NavLink>
-
-              <NavLink to="transaction">Transactions</NavLink>
-
-              <NavLink to="summary">Summary</NavLink>
-
-              <NavLink to="budget">Budget</NavLink>
-
-              <NavLink to="reminders">Reminders</NavLink>
-            </Nav>
-          </Row>
-        </Container>
-      </Navbar>
-    </>
+    <Row
+    //style={{ backgroundColor: 'green' }}
+    >
+      <Nav
+        //variant="underline"
+        fill
+        variant="tabs"
+      >
+        <Col className="navItems">
+          <NavLink to="/">Home</NavLink>
+        </Col>
+        <Col className="navItems">
+          <NavLink to="transaction">Transactions</NavLink>
+        </Col>
+        <Col className="navItems">
+          <NavLink to="summary">Summary</NavLink>
+        </Col>
+        <Col className="navItems">
+          <NavLink to="budget">Budget</NavLink>
+        </Col>
+        <Col className="navItems">
+          <NavLink to="reminders">Reminders</NavLink>
+        </Col>
+      </Nav>
+    </Row>
   );
 }
 

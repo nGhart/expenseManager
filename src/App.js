@@ -4,14 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routing from './Routing';
 import Navigation from './components/Navigation';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <BrowserRouter>
-      <section style={{ margin: '15px' }}>
+      <Container fluid>
         <Navigation />
         <Routing />
-      </section>
+      </Container>
     </BrowserRouter>
   );
 }

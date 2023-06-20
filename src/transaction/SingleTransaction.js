@@ -6,9 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
-// import { editTransaction } from '../appSlice/appSlice';
-// import { Modal, Form, Button } from 'react-bootstrap';
-
 const SingleTransaction = (props) => {
   const dispatch = useDispatch();
   let colourTransaction;
@@ -34,12 +31,11 @@ const SingleTransaction = (props) => {
       <Row
       //onClick={}
       >
-        <button>
-          <EditTransaction
-            user={props.user}
-            editTransaction={props.editTransaction}
-          />
-        </button>
+        <EditTransaction
+          user={props.user}
+          editTransaction={props.editTransaction}
+        />
+
         <button
           style={{
             width: '60px',

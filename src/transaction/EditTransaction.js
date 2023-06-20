@@ -38,9 +38,7 @@ const EditTransaction = (props) => {
 
   return (
     <>
-      <span onClick={handleShow} className="material-symbols-outlined">
-        edit
-      </span>
+      <button onClick={handleShow}>Edit</button>
       <Modal
         show={show}
         onHide={handleClose}
@@ -66,14 +64,20 @@ const EditTransaction = (props) => {
           onSubmit={handleEdit}
         >
           <Form.Group>
-            <Form.Check
+            <Form.Control
+              type="text"
+              name="transaction"
+              value={transactions.transaction}
+              onChange={handleChange}
+            ></Form.Control>
+            {/* <Form.Check
               inline
               label="Expense"
               name="transaction"
               type="radio"
               id="Expense"
               value="Expense"
-              checked={transactions.transaction === 'Expense'}
+              // checked={transactions.transaction === 'Expense'}
               onChange={handleChange}
             />
             <Form.Check
@@ -83,9 +87,9 @@ const EditTransaction = (props) => {
               type="radio"
               id="Income"
               value="Income"
-              checked={transactions.transaction === 'Income'}
+              // checked={transactions.transaction === 'Income'}
               onChange={handleChange}
-            />
+            /> */}
           </Form.Group>
           <Form.Group
             className="mb-3"
@@ -156,7 +160,7 @@ const EditTransaction = (props) => {
             >
               Category
             </Form.Label>
-            <Form.Select
+            {/* <Form.Select
               aria-label="Default select example"
               type="text"
               onChange={handleChange}
@@ -167,7 +171,7 @@ const EditTransaction = (props) => {
               <option value="Food">Food and Drink</option>
               <option value="2">Transport</option>
               <option value="3">Utilities</option>
-            </Form.Select>
+            </Form.Select> */}
           </Form.Group>
           <Form.Group
             className="mb-3"
@@ -213,7 +217,7 @@ const EditTransaction = (props) => {
               Payment Method
             </Form.Label>
             <div key={`inline-radio`} className="mb-3">
-              <Form.Check
+              {/* <Form.Check
                 inline
                 label="Cash"
                 name="payment"
@@ -242,7 +246,7 @@ const EditTransaction = (props) => {
                 id="mobileMoney"
                 checked={transactions.payment === 'Mobile Money'}
                 onChange={handleChange}
-              />
+              /> */}
             </div>
           </Form.Group>
           <Form.Group

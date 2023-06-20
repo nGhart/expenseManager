@@ -7,7 +7,6 @@ const Transactions = () => {
   const state = useSelector((state) => {
     return state.userReducer;
   });
-  console.log(state.userReducer);
   return (
     <>
       <Stack gap={2} style={{ marginTop: '5px' }}>
