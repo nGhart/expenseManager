@@ -1,6 +1,5 @@
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
 import { NavLink } from 'react-router-dom';
 
@@ -9,10 +8,22 @@ function Navigation() {
     <Row
     //style={{ backgroundColor: 'green' }}
     >
-      <Nav
+      <Navbar
+        className="navBar"
         //variant="underline"
         fill
         variant="tabs"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '50px',
+          padding: '2px',
+          textAlign: 'center',
+          overflow: 'hidden',
+          //backgroundColor: 'blue',
+          zIndex: '0',
+        }}
       >
         <Col className="navItems">
           <NavLink to="/">Home</NavLink>
@@ -27,9 +38,9 @@ function Navigation() {
           <NavLink to="budget">Budget</NavLink>
         </Col>
         <Col className="navItems">
-          <NavLink to="reminders">Reminders</NavLink>
+          <NavLink to="reminder">Reminders</NavLink>
         </Col>
-      </Nav>
+      </Navbar>
     </Row>
   );
 }

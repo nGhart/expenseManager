@@ -17,4 +17,11 @@ code {
 }
 a:link {
   text-decoration: none;
+  color: white;
+}
+.navBar {
+  background-color: rgb(32, 76, 117);
+}
+.menu {
+  background-color: rgb(37, 126, 210);
 }

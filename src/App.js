@@ -9,10 +9,11 @@ import { Container } from 'react-bootstrap';
 function App() {
   return (
     <BrowserRouter>
-      <Container fluid>
+      <section style={{ position: 'relative' }}>
         <Navigation />
+
         <Routing />
-      </Container>
+      </section>
     </BrowserRouter>
   );
 }

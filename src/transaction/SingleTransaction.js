@@ -28,29 +28,7 @@ const SingleTransaction = (props) => {
         // justifyContent: 'space-between',
       }}
     >
-      <Row
-      //onClick={}
-      >
-        <EditTransaction
-          user={props.user}
-          editTransaction={props.editTransaction}
-        />
-
-        <button
-          style={{
-            width: '60px',
-            backgroundColor: 'grey',
-            color: 'white',
-            borderRadius: '5px',
-            margin: '2px',
-            border: 'none',
-          }}
-          onClick={() => {
-            dispatch(deleteTransaction(props.user.id));
-          }}
-        >
-          Delete
-        </button>
+      <Row>
         <div
           style={{
             textAlign: 'center',
@@ -128,7 +106,34 @@ const SingleTransaction = (props) => {
           <p>{props.user.payment}</p>
         </Col>
       </Row>
+      <div
+        style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'center',
+        }}
+      >
+        <EditTransaction
+          user={props.user}
+          editTransaction={props.editTransaction}
+        />
 
+        <button
+          style={{
+            width: '60px',
+            backgroundColor: 'grey',
+            color: 'white',
+            borderRadius: '5px',
+            margin: '2px',
+            border: 'none',
+          }}
+          onClick={() => {
+            dispatch(deleteTransaction(props.user.id));
+          }}
+        >
+          Delete
+        </button>
+      </div>
       {/* <div
         style={{
           display: 'flex',
@@ -167,5 +172,4 @@ const SingleTransaction = (props) => {
     </Container>
   );
 };
-
 export default SingleTransaction;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { v1 as uuid } from 'uuid';
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 // import Row from 'react-bootstrap/Row';
 import { useDispatch } from 'react-redux';
 import { addTransaction } from '../appSlice/appSlice';
-import { FormGroup } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
 
 const AddTransaction = () => {
   const [show, setShow] = useState(false);
@@ -56,14 +56,14 @@ const AddTransaction = () => {
   };
 
   return (
-    <>
+    <Row>
       <Button
         variant="primary"
         onClick={handleShow}
         className="addButton"
         style={{
           position: 'fixed',
-          right: 0,
+          right: '10px',
           top: '70%',
           margin: '15px',
           marginRight: '8px',
@@ -314,7 +314,7 @@ const AddTransaction = () => {
           </Form.Group>
         </Form>
       </Modal>
-    </>
+    </Row>
   );
 };
 export default AddTransaction;

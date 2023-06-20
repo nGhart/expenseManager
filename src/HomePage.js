@@ -16,21 +16,21 @@ const HomePage = () => {
     dispatch(getBalance()),
     [state]
   );
+  let lastTransactions;
   const getLastTransactions = () => {
-    let lastTransactions;
-    lastTransactions = state.transactions.slice(-2);
-    console.log(lastTransactions);
+    lastTransactions = state.transactions.slice(-3);
   };
   getLastTransactions();
+  console.log(lastTransactions);
 
   return (
-    <div>
-      <Container style={{ fontFamily: 'Carter One' }}>
+    <>
+      <Container fluid style={{ fontFamily: 'Carter One', marginTop: '55px' }}>
         <Row
           style={{
             border: '2px solid grey',
             margin: '20px',
-            borderRadius: '20px',
+            borderRadius: '10px',
           }}
         >
           <h3 style={{ textAlign: 'center', padding: '20px' }}>
@@ -68,22 +68,24 @@ const HomePage = () => {
           style={{
             border: '2px solid grey',
             margin: '20px',
-            borderRadius: '20px',
+            borderRadius: '10px',
+            padding: '5px',
           }}
         >
-          {state.transactions.map((item) => {
+          {lastTransactions.map((item) => {
             let colourTransaction;
             colourTransaction =
               item.transaction === 'Income'
                 ? (colourTransaction = 'green')
                 : (colourTransaction = 'red');
             return (
-              <div
+              <section
                 key={item.id}
                 style={{
                   padding: '2px',
-                  boxShadow: '2px 2px 2px 2px grey',
-                  margin: '2px 0',
+                  boxShadow: '1px 1px 1px 1px grey',
+                  borderRadius: '5px',
+                  margin: '5px auto',
                 }}
               >
                 <Row>
@@ -96,14 +98,12 @@ const HomePage = () => {
                       fontStyle: 'italic',
                     }}
                   >
-                    <p style={{ padding: '5px' }}>{item.date}</p>
+                    <p style={{ padding: '5px', margin: '0' }}>{item.date}</p>
                     <p
                       style={{
-                        backgroundColor: `${colourTransaction}`,
+                        color: `${colourTransaction}`,
                         padding: '5px',
-                        color: 'white',
-                        // fontWeight: 700,
-                        borderRadius: '5px',
+                        margin: '0',
                       }}
                     >
                       {item.transaction}
@@ -120,56 +120,33 @@ const HomePage = () => {
                   }}
                 >
                   <Col
-                    xs={8}
+                    xs={7}
                     style={{
                       display: 'flex',
                       height: '100%',
                       alignItems: 'center',
                     }}
                   >
-                    <span
-                      className="material-symbols-outlined"
-                      style={{
-                        backgroundColor: 'red',
-                        borderRadius: '50%',
-                        // padding: '10px',
-                        height: '50px',
-                        width: '50px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginRight: '2px',
-                      }}
-                    >
-                      shopping_cart_checkout
-                    </span>
                     <section>
-                      <h6 style={{ fontWeight: 700 }}>{item.name}</h6>
+                      <h6 style={{ margin: 0 }}>{item.name}</h6>
                       <p style={{ fontStyle: 'italic' }}>
                         Category:{item.category}
                       </p>
                     </section>
                   </Col>
-                  <Col>
-                    <h6>
-                      GHC{' '}
-                      <span
-                        style={{
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        {item.price}
-                      </span>
+                  <Col style={{ padding: 0 }}>
+                    <h6 style={{ margin: 0 }}>
+                      GHC <span style={{}}>{item.price}</span>
                     </h6>
                     <p>{item.payment}</p>
                   </Col>
                 </Row>
-              </div>
+              </section>
             );
           })}
         </Row>
       </Container>
-    </div>
+    </>
   );
 };
 

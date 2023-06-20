@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import TransactionPage from './TransactionPage';
 import BudgetPage from './BudgetPage';
 import SummaryPage from './SummaryPage';
+import ReminderPage from './ReminderPage';
 
 function Routing() {
   return (
@@ -12,8 +13,7 @@ function Routing() {
       <Route path="transaction" element={<TransactionPage />} />
       <Route path="budget" element={<BudgetPage />} />
       <Route path="summary" element={<SummaryPage />} />
-      {/* <Route path=''element={}/>
-        <Route path=''element={}/> */}
+      <Route path="reminder" element={<ReminderPage />} />
     </Routes>
   );
 }

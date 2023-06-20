@@ -38,7 +38,19 @@ const EditTransaction = (props) => {
 
   return (
     <>
-      <button onClick={handleShow}>Edit</button>
+      <button
+        style={{
+          width: '60px',
+          backgroundColor: 'grey',
+          color: 'white',
+          borderRadius: '5px',
+          margin: '2px',
+          border: 'none',
+        }}
+        onClick={handleShow}
+      >
+        Edit
+      </button>
       <Modal
         show={show}
         onHide={handleClose}
