@@ -4,54 +4,54 @@ export const initialState = {
   transactions: [
     {
       date: '2023-12-09',
-      name: 'wert',
+      name: 'Waakye',
       category: 'Food',
-      price: 2000.3,
+      price: 20.0,
       payment: 'Cash',
       transaction: 'Expense',
       id: 'iuiu34@322',
     },
     {
       date: '2023-12-09',
-      name: 'wert',
-      category: 'Food',
-      price: 300.3,
-      payment: 'Cash',
-      transaction: 'Income',
+      name: 'Water',
+      category: 'Utilities',
+      price: 50,
+      payment: 'Mobile Money',
+      transaction: 'Expense',
       id: 'iuiu34#32278',
     },
     {
       date: '2023-12-09',
-      name: 'wert',
-      category: 'Food',
-      price: 300.3,
+      name: 'Makola',
+      category: 'Transport',
+      price: 9,
       payment: 'Cash',
-      transaction: 'Income',
+      transaction: 'Expense',
       id: 'iuiu343227*878',
     },
     {
       date: '2023-12-09',
-      name: 'four',
-      category: 'Food',
-      price: 2000.3,
+      name: 'Little Mermaid',
+      category: 'Entertainment',
+      price: 100,
       payment: 'Cash',
       transaction: 'Expense',
       id: 'iuiugtyh673!4322',
     },
     {
       date: '2023-12-09',
-      name: 'five',
-      category: 'Food',
-      price: 300.3,
+      name: 'Salary',
+      category: 'Salary',
+      price: 1500,
       payment: 'Cash',
       transaction: 'Income',
       id: 'iuiu3ewrew43227@#8',
     },
     {
       date: '2023-12-09',
-      name: 'six',
-      category: 'Food',
-      price: 300.3,
+      name: 'Rent',
+      category: 'Household',
+      price: 500,
       payment: 'Cash',
       transaction: 'Income',
       id: 'iuiu34322787#@erew8',
@@ -90,15 +90,13 @@ const transactionSlice = createSlice({
           : (totalIncome = totalIncome + Number(item.price))
       );
 
-      state.totalIncome = totalIncome;
-      state.totalExpense = totalExpense;
+      state.totalIncome = totalIncome.toFixed(2);
+      state.totalExpense = totalExpense.toFixed(2);
     },
     getBalance: (state) => {
-      let difference;
-      difference = state.totalIncome - state.totalExpense;
-      let balance = difference.toFixed(2);
-      state.balance = balance;
-      // console.log(state.balance);
+      let balance;
+      balance = state.totalIncome - state.totalExpense;
+      state.balance = balance.toFixed(2);
     },
   },
 });

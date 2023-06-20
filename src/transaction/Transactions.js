@@ -6,17 +6,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBalance, getEachTotal } from '../appSlice/appSlice';
 
 const Transactions = () => {
-  // const state = useSelector((state) => {
-  //   return state.userReducer;
-  // });
   const state = useSelector((state) => {
     return state.userReducer;
   });
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getEachTotal());
-  }, dispatch(getBalance())[state]);
-
+  }, [state]);
+  useEffect(() => {
+    dispatch(getBalance());
+  }, [state]);
   return (
     <>
       <section

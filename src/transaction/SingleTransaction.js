@@ -69,22 +69,6 @@ const SingleTransaction = (props) => {
             alignItems: 'center',
           }}
         >
-          <span
-            className="material-symbols-outlined"
-            style={{
-              backgroundColor: 'red',
-              borderRadius: '50%',
-              padding: '10px',
-              height: '50px',
-              width: '50px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginRight: '2px',
-            }}
-          >
-            shopping_cart_checkout
-          </span>
           <section>
             <h6 style={{ fontWeight: 700 }}>{props.user.name}</h6>
             <p style={{ fontStyle: 'italic' }}>

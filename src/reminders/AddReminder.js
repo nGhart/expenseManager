@@ -17,7 +17,7 @@ export default class AddReminder extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.newContact(this.state);
+    this.props.newReminder(this.state);
     this.setState({
       bill: '',
       cost: '',
@@ -41,6 +41,7 @@ export default class AddReminder extends Component {
             }}
           >
             <input
+              required
               placeholder="Bill Item"
               type="text"
               name="bill"
@@ -57,6 +58,7 @@ export default class AddReminder extends Component {
             <input
               type="number"
               name="cost"
+              required
               placeholder="Cost"
               value={this.state.cost}
               onChange={this.handleChange}
@@ -71,6 +73,7 @@ export default class AddReminder extends Component {
             <input
               type="date"
               name="due"
+              required
               value={this.state.due}
               onChange={this.handleChange}
               style={{

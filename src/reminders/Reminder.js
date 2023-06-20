@@ -4,9 +4,9 @@ import EditReminders from './EditReminders';
 
 import Modal from 'react-bootstrap/Modal';
 function Reminder(props) {
-  const deleteContact = (e) => {
+  const deleteReminder = (e) => {
     e.preventDefault();
-    props.deleteContact(props.userInfo.id);
+    props.deleteReminder(props.userInfo.id);
   };
   const [show, setShow] = useState(false);
 
@@ -21,7 +21,7 @@ function Reminder(props) {
         <Modal.Body className="modalMain">
           <EditReminders
             userInfo={props.userInfo}
-            editContact={props.editContact}
+            editReminder={props.editReminder}
             closeModal={handleClose}
           />
         </Modal.Body>
@@ -37,7 +37,6 @@ function Reminder(props) {
           borderRadius: '5px',
           padding: '5px',
           marginBottom: '5px',
-          borderRadius: '5px',
           height: '50px',
         }}
       >
@@ -53,7 +52,7 @@ function Reminder(props) {
           }}
         >
           <div onClick={handleShow}>✎</div>
-          <div className="deleteIcon" onClick={deleteContact}>
+          <div className="deleteIcon" onClick={deleteReminder}>
             ✖
           </div>
         </div>

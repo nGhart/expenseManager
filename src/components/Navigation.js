@@ -5,12 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <Row
-    //style={{ backgroundColor: 'green' }}
-    >
+    <Row>
       <Navbar
         className="navBar"
-        //variant="underline"
         fill
         variant="tabs"
         style={{
@@ -20,9 +17,6 @@ function Navigation() {
           height: '50px',
           padding: '2px',
           textAlign: 'center',
-          overflow: 'hidden',
-          //backgroundColor: 'blue',
-          zIndex: '0',
         }}
       >
         <Col className="navItems">

@@ -113,7 +113,8 @@ const AddTransaction = () => {
           onSubmit={handleSubmit}
         >
           <Form.Group>
-            {/* <Form.Check
+            /*{' '}
+            <Form.Check
               inline
               label="Expense"
               name="transaction"
@@ -132,13 +133,7 @@ const AddTransaction = () => {
               value="Income"
               checked={state.transaction === 'Income'}
               onChange={handleChange}
-            /> */}
-            <Form.Control
-              type="text"
-              name="transaction"
-              value={state.transaction}
-              onChange={handleChange}
-            ></Form.Control>
+            />
           </Form.Group>
           <Form.Group
             className="mb-3"
@@ -209,7 +204,7 @@ const AddTransaction = () => {
             >
               Category
             </Form.Label>
-            {/* <Form.Select
+            <Form.Select
               aria-label="Default select example"
               type="text"
               onChange={handleChange}
@@ -220,7 +215,7 @@ const AddTransaction = () => {
               <option value="Food">Food and Drink</option>
               <option value="2">Transport</option>
               <option value="3">Utilities</option>
-            </Form.Select> */}
+            </Form.Select>
           </Form.Group>
           <Form.Group
             className="mb-3"
@@ -266,7 +261,7 @@ const AddTransaction = () => {
               Payment Method
             </Form.Label>
             <div key={`inline-radio`} className="mb-3">
-              {/* <Form.Check
+              <Form.Check
                 inline
                 label="Cash"
                 name="payment"
@@ -295,7 +290,7 @@ const AddTransaction = () => {
                 id="mobileMoney"
                 checked={state.payment === 'Mobile Money'}
                 onChange={handleChange}
-              /> */}
+              />
             </div>
           </Form.Group>
           <Form.Group

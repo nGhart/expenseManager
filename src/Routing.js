@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 import TransactionPage from './TransactionPage';
 import BudgetPage from './BudgetPage';
-import SummaryPage from './SummaryPage';
 import ReminderPage from './ReminderPage';
+import SummaryPage from './SummaryPage';
 
 function Routing() {
   return (

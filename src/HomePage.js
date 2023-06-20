@@ -9,20 +9,16 @@ const HomePage = () => {
     return state.userReducer;
   });
   const dispatch = useDispatch();
-  useEffect(
-    () => {
-      dispatch(getEachTotal());
-    },
-    dispatch(getBalance()),
-    [state]
-  );
+  useEffect(() => {
+    dispatch(getEachTotal());
+    dispatch(getBalance());
+  }, [state.transactions]);
   let lastTransactions;
   const getLastTransactions = () => {
     lastTransactions = state.transactions.slice(-3);
   };
   getLastTransactions();
-  console.log(lastTransactions);
-
+  //console.log(typeof );
   return (
     <>
       <Container fluid style={{ fontFamily: 'Carter One', marginTop: '55px' }}>

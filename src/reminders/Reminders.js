@@ -9,8 +9,8 @@ const Reminders = (props) => {
           <Reminder
             userInfo={user}
             key={user.id}
-            deleteContact={props.deleteContact}
-            editContact={props.editContact}
+            deleteReminder={props.deleteReminder}
+            editReminder={props.editReminder}
           />
         );
       })}

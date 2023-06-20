@@ -40,20 +40,20 @@ class ReminderPage extends Component {
       ],
     };
   }
-  handleAddUser = (user) => {
+  addReminder = (user) => {
     user.id = Math.floor(Math.random() * 10000);
     this.setState({
       users: [...this.state.users, user],
     });
   };
 
-  deleteContact = (id) => {
-    let remainingContacts = this.state.users.filter((user) => user.id !== id);
+  deleteReminder = (id) => {
+    let remainingReminders = this.state.users.filter((user) => user.id !== id);
     this.setState({
-      users: remainingContacts,
+      users: remainingReminders,
     });
   };
-  editContact = (id, newInfo) => {
+  editReminder = (id, newInfo) => {
     this.setState({
       users: this.state.users.map((user) => (user.id === id ? newInfo : user)),
     });
@@ -65,10 +65,10 @@ class ReminderPage extends Component {
           <Row>
             <Col>
               <Stack gap={2} className="col-md-12 mx-auto">
-                <div>Add Contact</div>
+                <div>Add Reminder</div>
 
                 <div>
-                  <AddReminder newContact={this.handleAddUser} />
+                  <AddReminder newReminder={this.addReminder} />
                 </div>
               </Stack>
             </Col>
@@ -78,8 +78,8 @@ class ReminderPage extends Component {
             <Stack gap={2} className="col-md-12 mx-auto">
               <Reminders
                 usersData={this.state.users}
-                deleteContact={this.deleteContact}
-                editContact={this.editContact}
+                deleteReminder={this.deleteReminder}
+                editReminder={this.editReminder}
               />
             </Stack>
           </div>

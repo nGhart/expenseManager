@@ -16,7 +16,7 @@ class EditReminders extends Component {
   };
   handleEdit = (e) => {
     e.preventDefault();
-    this.props.editContact(this.state.id, this.state);
+    this.props.editReminder(this.state.id, this.state);
     this.setState({
       bill: '',
       cost: '',
