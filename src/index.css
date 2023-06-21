@@ -19,9 +19,27 @@ a:link {
   text-decoration: none;
   color: white;
 }
+a:visited {
+  color: white;
+}
+a:hover {
+  color: goldenrod;
+}
+a:active {
+  color: goldenrod;
+}
+
 .navBar {
   background-color: rgb(32, 76, 117);
 }
-.menu {
+.transactionHeader {
   background-color: rgb(37, 126, 210);
+  background-color: rgb(37, 126, 210);
+}
+.returnArrow:hover {
+  transform: scale(1.5);
+}
+.addButton:hover {
+  transform: scale(1.5);
+  padding: 5px;
 }

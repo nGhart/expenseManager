@@ -4,11 +4,10 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-// import Col from 'react-bootstrap/Col';
-// import Row from 'react-bootstrap/Row';
 import { useDispatch } from 'react-redux';
 import { addTransaction } from '../appSlice/appSlice';
 import Row from 'react-bootstrap/Row';
+import { FormGroup } from 'react-bootstrap';
 
 const AddTransaction = () => {
   const [show, setShow] = useState(false);
@@ -72,8 +71,7 @@ const AddTransaction = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'green',
-          // backgroundColor: 'rgb(11, 64, 73)',
+          backgroundColor: 'rgb(32, 76, 117)',
           border: 'none',
           borderRadius: '50%',
         }}
@@ -94,15 +92,6 @@ const AddTransaction = () => {
         backdrop="static"
         keyboard={false}
       >
-        <div>
-          <Button
-            type="submit"
-            onClick={handleClose}
-            style={{ textAlign: 'right' }}
-          >
-            <span className="material-symbols-outlined">cancel</span>
-          </Button>
-        </div>
         <Form
           style={{
             width: '100%',
@@ -112,8 +101,46 @@ const AddTransaction = () => {
           }}
           onSubmit={handleSubmit}
         >
+          <Form.Group style={{ display: 'flex' }}>
+            <Button
+              type="submit"
+              style={{
+                width: '150px',
+                backgroundColor: 'transparent',
+                color: 'grey',
+                padding: '0',
+                border: 'none',
+              }}
+            >
+              <span
+                className="material-symbols-outlined returnArrow"
+                onClick={handleClose}
+              >
+                arrow_back
+              </span>
+            </Button>
+            <Button
+              type="submit"
+              style={{
+                width: '150px',
+                backgroundColor: 'transparent',
+                color: 'grey',
+                padding: '0',
+                border: 'none',
+              }}
+            >
+              <span
+                type="submit"
+                // style={{
+                //   fontSize: '40px',
+                // }}
+                className="material-symbols-outlined returnArrow"
+              >
+                done
+              </span>
+            </Button>
+          </Form.Group>
           <Form.Group>
-            /*{' '}
             <Form.Check
               inline
               label="Expense"
@@ -302,11 +329,7 @@ const AddTransaction = () => {
               alignItems: 'center',
               border: 'none',
             }}
-          >
-            <Button type="submit" style={{ width: '150px' }}>
-              <span>Add</span>
-            </Button>
-          </Form.Group>
+          ></Form.Group>
         </Form>
       </Modal>
     </Row>

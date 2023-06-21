@@ -31,21 +31,45 @@ const Transactions = () => {
           left: 0,
           marginBottom: '2000px',
           padding: '5px',
+          // color: 'white',
         }}
-        className="menu"
+        className="transactionHeader"
       >
         <h6>
           Balance{' '}
           <span
             style={{
               color: `${state.balance < 0 ? 'red' : 'black'}`,
+              fontFamily: 'Carter One',
             }}
           >
             {state.balance}
           </span>
         </h6>
-        <h6>Income GHC{state.totalIncome}</h6>
-        <h6>Expense GHC{state.totalExpense}</h6>
+        <h6>
+          Income GHC
+          <span
+            style={{
+              color: 'green',
+              // fontWeight: '700',
+              fontFamily: 'Carter One',
+            }}
+          >
+            {state.totalIncome}
+          </span>
+        </h6>
+        <h6>
+          Expense GHC
+          <span
+            style={{
+              color: 'red',
+              // fontWeight: '700',
+              fontFamily: 'Carter One',
+            }}
+          >
+            {state.totalExpense}
+          </span>
+        </h6>
       </section>
       <Stack gap={2} style={{ marginTop: '55px' }}>
         {state.transactions.map((item) => {

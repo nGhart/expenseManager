@@ -24,13 +24,11 @@ const EditTransaction = (props) => {
     e.preventDefault();
     let newTransaction = {
       name: transactions.name,
-      id: transactions.id,
       date: transactions.date,
       category: transactions.category,
       price: transactions.price,
       payment: transactions.payment,
       transaction: transactions.transaction,
-
       id: props.user.id,
     };
     dispatch(editTransaction({ id: props.user.id, newTransaction }));

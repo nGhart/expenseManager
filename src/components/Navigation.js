@@ -17,6 +17,7 @@ function Navigation() {
           height: '50px',
           padding: '2px',
           textAlign: 'center',
+          zIndex: '1',
         }}
       >
         <Col className="navItems">

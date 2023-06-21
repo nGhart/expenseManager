@@ -4,6 +4,7 @@ import { getBalance, getEachTotal } from './appSlice/appSlice';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 const HomePage = () => {
   const state = useSelector((state) => {
     return state.userReducer;
@@ -18,7 +19,6 @@ const HomePage = () => {
     lastTransactions = state.transactions.slice(-3);
   };
   getLastTransactions();
-  //console.log(typeof );
   return (
     <>
       <Container fluid style={{ fontFamily: 'Carter One', marginTop: '55px' }}>

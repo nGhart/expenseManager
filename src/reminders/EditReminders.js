@@ -28,39 +28,74 @@ class EditReminders extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleEdit}>
-          <div className="main">
-            <div>
-              <label>Bill Item </label>
-              <input
-                type="text"
-                name="bill"
-                value={this.state.bill}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="mb-3">
-              <label>Cost </label>
-              <input
-                className=".to-do-input"
-                placeholder="Cost"
-                type="number"
-                name="cost"
-                value={this.state.cost}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="mb-3">
-              <label>Due On </label>
-              <input
-                type="date"
-                name="due"
-                value={this.state.due}
-                onChange={this.handleChange}
-              />
-            </div>
-          </div>
-          <button className="button">Save</button>
+        <form
+          onSubmit={this.handleEdit}
+          style={{
+            marginBottom: '20px',
+            display: 'flex',
+            width: '100%',
+            padding: '20px',
+          }}
+        >
+          <input
+            required
+            placeholder="Bill Item"
+            type="text"
+            name="bill"
+            value={this.state.bill}
+            onChange={this.handleChange}
+            style={{
+              minWidth: '90px',
+              border: 'none',
+              borderBottom: '2px solid grey',
+              marginRight: '2px',
+            }}
+          />
+
+          <input
+            type="number"
+            name="cost"
+            required
+            placeholder="Cost"
+            value={this.state.cost}
+            onChange={this.handleChange}
+            style={{
+              minWidth: '50px',
+              border: 'none',
+              borderBottom: '2px solid grey',
+              marginRight: '2px',
+            }}
+          />
+
+          <input
+            type="date"
+            name="due"
+            required
+            value={this.state.due}
+            onChange={this.handleChange}
+            style={{
+              minWidth: '110px',
+              marginRight: '2px',
+              border: 'none',
+              borderBottom: '2px solid grey',
+            }}
+          />
+
+          <button
+            style={{
+              width: '50px',
+              border: 'none',
+              display: 'flex',
+              height: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              backgroundColor: 'transparent',
+            }}
+          >
+            Edit
+            {/* <span className="material-symbols-outlined">save</span> */}
+          </button>
         </form>
       </>
     );

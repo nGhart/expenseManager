@@ -9,7 +9,7 @@ export const initialState = {
       price: 20.0,
       payment: 'Cash',
       transaction: 'Expense',
-      id: 'iuiu34@322',
+      id: 'iuiu3',
     },
     {
       date: '2023-12-09',
@@ -18,7 +18,7 @@ export const initialState = {
       price: 50,
       payment: 'Mobile Money',
       transaction: 'Expense',
-      id: 'iuiu34#32278',
+      id: '4#32278',
     },
     {
       date: '2023-12-09',
@@ -27,7 +27,16 @@ export const initialState = {
       price: 9,
       payment: 'Cash',
       transaction: 'Expense',
-      id: 'iuiu343227*878',
+      id: 'iuiu*878',
+    },
+    {
+      date: '2023-12-10',
+      name: 'Uber',
+      category: 'Transport',
+      price: 21,
+      payment: 'Cash',
+      transaction: 'Expense',
+      id: 'i7*878',
     },
     {
       date: '2023-12-09',
@@ -36,7 +45,7 @@ export const initialState = {
       price: 100,
       payment: 'Cash',
       transaction: 'Expense',
-      id: 'iuiugtyh673!4322',
+      id: 'iuiugty2',
     },
     {
       date: '2023-12-09',
@@ -45,7 +54,7 @@ export const initialState = {
       price: 1500,
       payment: 'Cash',
       transaction: 'Income',
-      id: 'iuiu3ewrew43227@#8',
+      id: 'wrew43227@#8',
     },
     {
       date: '2023-12-09',
@@ -53,8 +62,17 @@ export const initialState = {
       category: 'Household',
       price: 500,
       payment: 'Cash',
+      transaction: 'Expense',
+      id: 'iuiu34327#@erew8',
+    },
+    {
+      date: '2023-12-09',
+      name: 'Interest',
+      category: 'Investment',
+      price: 500,
+      payment: 'Cash',
       transaction: 'Income',
-      id: 'iuiu34322787#@erew8',
+      id: 'iuiwe87#@8',
     },
   ],
 };

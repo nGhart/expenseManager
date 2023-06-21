@@ -14,23 +14,19 @@ function Reminder(props) {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header className="mb3" closeButton>
-          <Modal.Title>Edit</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="modalMain">
-          <EditReminders
-            userInfo={props.userInfo}
-            editReminder={props.editReminder}
-            closeModal={handleClose}
-          />
-        </Modal.Body>
+      <Modal centered show={show} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+
+        <EditReminders
+          userInfo={props.userInfo}
+          editReminder={props.editReminder}
+          closeModal={handleClose}
+        />
       </Modal>
 
       <Stack
         direction="horizontal"
         gap={3}
-        className=" todo-row"
         style={{
           backgroundColor: 'rgb(162, 197, 243)',
           boxShadow: '2px 2px 2px 2px grey',

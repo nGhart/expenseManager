@@ -1,95 +1,81 @@
-// import React from 'react';
-
-// const BudgetPage = () => {
-//   return <div>BudgetPage</div>;
-// };
-
-// export default BudgetPage;
-import React from 'react';
-import { Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import Reminders from './reminders/Reminders';
+import AddReminder from './reminders/AddReminder';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Stack from 'react-bootstrap/Stack';
+import './App.css';
 
-const users = [
-  {
-    name: 'Kojo Asante',
-    number: '0244111111',
-    group: 'AHS Alumni',
-    rsvp: 'Yes',
-    plusOne: 'Yes',
-    table: 'Table 1',
-    id: 're4er56erf',
-  },
-  {
-    name: 'Kobina Asante',
-    number: '0244111112',
-    group: 'XXX Bank',
-    rsvp: 'No',
-    plusOne: 'Yes',
-    table: 'Table 2',
-    id: 're4er56erg',
-  },
-  {
-    name: 'Kwaku Asante',
-    number: '0244111113',
-    group: 'Accra Church',
-    rsvp: 'Maybe',
-    plusOne: 'No',
-    table: 'Table 3',
-    id: 're4er56erh',
-  },
-  {
-    name: 'Yaw Asante',
-    number: '0244111114',
-    group: 'FHS Alumni',
-    rsvp: 'Yes',
-    plusOne: 'No',
-    table: 'Table 4',
-    id: 're4er56eri',
-  },
-  {
-    name: 'Kofi Asante',
-    number: '0244111115',
-    group: "Men's Group",
-    rsvp: 'Yes',
-    plusOne: 'No',
-    table: 'Table 5',
-    id: 're4er56erj',
-  },
-  {
-    name: 'Kwame Asante',
-    number: '0244111116',
-    group: 'UofA Alumni',
-    rsvp: 'Yes',
-    plusOne: 'No',
-    table: 'Table 6',
-    id: 're4er56erK',
-  },
-];
+const BudgetPage = () => {
+  const [users, setUsers] = useState([
+    {
+      catName: 'Water',
+      budget: 70,
+      id: '3454ght783ttt',
+    },
+    {
+      catName: 'Electricity',
+      budget: 230,
+      id: '3454ght783tt89',
+    },
+  ]);
 
-const TableList = () => {
-  const tables = users.reduce((tableMembers, item) => {
-    const { table } = item;
-    if (!tableMembers[table]) {
-      tableMembers[table] = [];
-    }
-    tableMembers[table].push(item);
-    return tableMembers;
-  }, {});
-  console.log(tables);
+  const addReminder = (user) => {
+    user.id = Math.floor(Math.random() * 10000);
+    setUsers([...users, user]);
+  };
+
+  const deleteReminder = (id) => {
+    const remainingReminders = users.filter((user) => user.id !== id);
+    setUsers(remainingReminders);
+  };
+
+  const editReminder = (id, newInfo) => {
+    setUsers(users.map((user) => (user.id === id ? newInfo : user)));
+  };
+  let sortedReminders = users.slice().sort((a, b) => (a.due > b.due ? 1 : -1));
+  //.sort((a, b) => (new Date(a.due) > new Date(b.due) ? 1 : -1));
+  //let nextReminders;
+  console.log(users);
+  console.log(sortedReminders);
   return (
-    <Row className="seatingChartContainer" style={{ marginTop: '60px' }}>
-      {Object.entries(tables).map(([table, items]) => (
-        <Col xs={4} sm={2} key={table}>
-          <h3>{table}</h3>
-          <div className="tablelist">
-            {items.map((item) => (
-              <p key={item.id}>{item.name}</p>
-            ))}
-          </div>
+    <Container
+      style={{
+        marginTop: '50px',
+        //     .to-do-app {
+        //   /* width: 100%; */
+        //   height: 100vh;
+        //   display: flex;
+        //   justify-content: center;
+        //   min-height: 600px;
+        //   /* width: 500px; */
+        //   margin: 60px auto;
+        //   padding: 20px;
+        // }
+      }}
+    >
+      <h1 style={{ textAlign: 'center' }}>Reminders</h1>
+      <Row>
+        <Col>
+          <Stack gap={2} className="col-md-12 mx-auto">
+            <div>
+              <AddReminder newReminder={addReminder} />
+            </div>
+          </Stack>
         </Col>
-      ))}
-    </Row>
+      </Row>
+      <div>
+        <Stack gap={2} className="col-md-12 mx-auto">
+          <Reminders
+            usersData={users}
+            deleteReminder={deleteReminder}
+            editReminder={editReminder}
+          />
+        </Stack>
+      </div>
+    </Container>
   );
 };
 
-export default TableList;
+export default BudgetPage;

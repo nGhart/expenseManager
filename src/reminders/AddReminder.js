@@ -37,7 +37,6 @@ export default class AddReminder extends Component {
               marginBottom: '20px',
               display: 'flex',
               width: '100%',
-              // justifyContent: 'space-between',
             }}
           >
             <input
