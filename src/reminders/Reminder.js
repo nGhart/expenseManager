@@ -36,7 +36,9 @@ function Reminder(props) {
           height: '50px',
         }}
       >
-        <h6 style={{ width: '30%' }}>{props.userInfo.bill}</h6>
+        <h6 style={{ width: '30%', textTransform: 'capitalize' }}>
+          {props.userInfo.bill}
+        </h6>
         <h6>GHC {props.userInfo.cost}</h6>
         <div className=" ms-auto">
           <h6>{props.userInfo.due}</h6>

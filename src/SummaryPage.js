@@ -120,7 +120,7 @@ const SummaryPage = () => {
         style={{ border: '1px solid grey', margin: '10px' }}
       >
         <h2>Transactions by transaction type</h2>
-        <Col sm={6}>
+        <Col sm={5}>
           <Table bordered hover style={{ maxWidth: '320px', margin: 'auto' }}>
             <thead>
               <tr>
@@ -140,7 +140,7 @@ const SummaryPage = () => {
             </tbody>
           </Table>
         </Col>
-        <Col sm={6} id="chartTrans">
+        <Col sm={7} id="chartTrans">
           <BarChart
             layout="vertical"
             width={300}
@@ -159,7 +159,7 @@ const SummaryPage = () => {
 
       <Row style={{ border: '1px solid grey', margin: '10px' }}>
         <h2>Transactions by Expenses</h2>
-        <Col sm={6} id="categoryTotal">
+        <Col sm={5} id="categoryTotal">
           <Table bordered hover style={{ maxWidth: '320px', margin: 'auto' }}>
             <thead>
               <tr>
@@ -179,7 +179,7 @@ const SummaryPage = () => {
             })}
           </Table>
         </Col>
-        <Col sm={6} id="categoryChart">
+        <Col sm={7} id="categoryChart">
           <PieChart width={300} height={300} style={{ margin: 'auto' }}>
             <Pie
               dataKey="amount"
@@ -213,7 +213,7 @@ const SummaryPage = () => {
       </Row>
       <Row style={{ border: '1px solid grey', margin: '10px' }}>
         <h2>Transactions by Income Source</h2>
-        <Col sm={6} id="incomeTotal">
+        <Col sm={5} id="incomeTotal">
           <Table bordered hover style={{ maxWidth: '320px', margin: 'auto' }}>
             <thead>
               <tr>
@@ -233,7 +233,7 @@ const SummaryPage = () => {
             })}
           </Table>
         </Col>
-        <Col sm={6} id="incomeChart">
+        <Col sm={7} mid="incomeChart">
           <PieChart width={300} height={300} style={{ margin: 'auto' }}>
             <Pie
               dataKey="incomeTotal"

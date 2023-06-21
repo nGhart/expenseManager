@@ -70,7 +70,9 @@ const SingleTransaction = (props) => {
           }}
         >
           <section>
-            <h6 style={{ fontWeight: 700 }}>{props.user.name}</h6>
+            <h6 style={{ fontWeight: 700, textTransform: 'capitalize' }}>
+              {props.user.name}
+            </h6>
             <p style={{ fontStyle: 'italic' }}>
               Category:{props.user.category}
             </p>

@@ -30,9 +30,6 @@ function Navigation() {
           <NavLink to="summary">Summary</NavLink>
         </Col>
         <Col className="navItems">
-          <NavLink to="budget">Budget</NavLink>
-        </Col>
-        <Col className="navItems">
           <NavLink to="reminder">Reminders</NavLink>
         </Col>
       </Navbar>

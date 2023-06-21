@@ -124,7 +124,9 @@ const HomePage = () => {
                     }}
                   >
                     <section>
-                      <h6 style={{ margin: 0 }}>{item.name}</h6>
+                      <h6 style={{ margin: 0, textTransform: 'capitalize' }}>
+                        {item.name}
+                      </h6>
                       <p style={{ fontStyle: 'italic' }}>
                         Category:{item.category}
                       </p>

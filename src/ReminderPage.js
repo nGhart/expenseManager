@@ -57,21 +57,11 @@ const ReminderPage = () => {
     <Container
       style={{
         marginTop: '50px',
-        //     .to-do-app {
-        //   /* width: 100%; */
-        //   height: 100vh;
-        //   display: flex;
-        //   justify-content: center;
-        //   min-height: 600px;
-        //   /* width: 500px; */
-        //   margin: 60px auto;
-        //   padding: 20px;
-        // }
       }}
     >
       <h1 style={{ textAlign: 'center' }}>Reminders</h1>
       <Row>
-        <Col>
+        <Col sm={{ span: 4, offset: 4 }}>
           <Stack gap={2} className="col-md-12 mx-auto">
             <div>
               <AddReminder newReminder={addReminder} />

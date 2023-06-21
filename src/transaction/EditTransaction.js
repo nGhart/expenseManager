@@ -177,9 +177,25 @@ const EditTransaction = (props) => {
               value={transactions.category}
             >
               <option> Choose Category</option>
-              <option value="Food">Food and Drink</option>
-              <option value="2">Transport</option>
-              <option value="3">Utilities</option>
+              <hr />
+              <option>EXPENSE</option>
+              <option value="Food and Drink">Food and Drink</option>
+              <option value="Transport">Transport</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Household">Household</option>
+              <option value="Health-care">Health-care</option>
+              <option value="Vehicle">Vehicle</option>
+              <option value="Loans">Loans</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+              <hr />
+              <option>INCOME</option>
+              <option value="Salary">Salary</option>
+              <option value="Investment">Investment</option>
+              <option value="Pension">Pension</option>
+              <option value="Rental Income">Rental Income</option>
+              <option value="Gifts">Gifts</option>
             </Form.Select>
           </Form.Group>
           <Form.Group

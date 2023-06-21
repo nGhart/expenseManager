@@ -5,7 +5,7 @@ export const initialState = {
     {
       date: '2023-12-09',
       name: 'Waakye',
-      category: 'Food',
+      category: 'Food and Drink',
       price: 20.0,
       payment: 'Cash',
       transaction: 'Expense',
@@ -58,7 +58,7 @@ export const initialState = {
     },
     {
       date: '2023-12-09',
-      name: 'Rent',
+      name: 'rent',
       category: 'Household',
       price: 500,
       payment: 'Cash',
