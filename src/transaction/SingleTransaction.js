@@ -15,17 +15,14 @@ const SingleTransaction = (props) => {
       : (colourTransaction = 'red');
 
   return (
-    <Container
-      // key={props.user.id}
+    <Col
+      xs={12}
+      lg={{ span: 6, offset: 3 }}
+      key={props.user.id}
       style={{
-        padding: '5px',
+        margin: '5px',
         borderRadius: '5px',
         boxShadow: '2px 2px 2px 2px grey',
-        // display: 'flex',
-        // flexDirection: 'row',
-        // width: '100%',
-        // backgroundColor: 'white',
-        // justifyContent: 'space-between',
       }}
     >
       <Row>
@@ -120,42 +117,7 @@ const SingleTransaction = (props) => {
           Delete
         </button>
       </div>
-      {/* <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <button
-          style={{
-            width: '60px',
-            backgroundColor: 'grey',
-            color: 'white',
-            borderRadius: '5px',
-            margin: '2px',
-            border: 'none',
-          }}
-          onClick={() => {}}
-        >
-          Edit
-        </button>
-        <button
-          style={{
-            width: '60px',
-            backgroundColor: 'grey',
-            color: 'white',
-            borderRadius: '5px',
-            margin: '2px',
-            border: 'none',
-          }}
-          onClick={() => {
-            dispatch(deleteTransaction(props.user.id));
-          }}
-        >
-          Delete
-        </button>
-      </div> */}
-    </Container>
+    </Col>
   );
 };
 export default SingleTransaction;

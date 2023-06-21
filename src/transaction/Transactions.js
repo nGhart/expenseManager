@@ -1,5 +1,5 @@
 import React from 'react';
-import Stack from 'react-bootstrap/Stack';
+import Row from 'react-bootstrap/Row';
 import { useEffect } from 'react';
 import SingleTransaction from './SingleTransaction';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,7 @@ const Transactions = () => {
   });
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getEachTotal());
   }, [state]);
@@ -71,11 +72,17 @@ const Transactions = () => {
           </span>
         </h6>
       </section>
-      <Stack gap={2} style={{ marginTop: '55px' }}>
+      <Row
+        style={{
+          marginTop: '55px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         {state.transactions.map((item) => {
           return <SingleTransaction key={item.id} user={item} />;
         })}
-      </Stack>
+      </Row>
     </>
   );
 };
