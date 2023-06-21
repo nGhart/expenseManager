@@ -68,6 +68,7 @@ const HomePage = () => {
           </Col>
         </Row>
         <Row style={{ display: 'flex', justifyContent: 'center' }}>
+              <h3>Recent Transactions</h3>
           <Col
             md={{ span: 6, offset: 3 }}
             style={{
