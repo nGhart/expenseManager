@@ -100,7 +100,13 @@ const AddTransaction = () => {
           }}
           onSubmit={handleSubmit}
         >
-          <Form.Group style={{ display: 'flex' }}>
+          <Form.Group
+            style={{
+              display: 'flex',
+              width: '100%',
+              justifyContent: 'space-between',
+            }}
+          >
             <Button
               type="submit"
               style={{
@@ -238,7 +244,7 @@ const AddTransaction = () => {
               value={state.category}
             >
               <option> Choose Category</option>
-              <hr />
+              <option></option>
               <option>EXPENSE</option>
               <option value="Food and Drink">Food and Drink</option>
               <option value="Transport">Transport</option>
@@ -250,7 +256,7 @@ const AddTransaction = () => {
               <option value="Loans">Loans</option>
               <option value="Entertainment">Entertainment</option>
               <option value="Miscellaneous">Miscellaneous</option>
-              <hr />
+              <option></option>
               <option>INCOME</option>
               <option value="Salary">Salary</option>
               <option value="Investment">Investment</option>

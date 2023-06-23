@@ -14,10 +14,7 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(getEachTotal());
     dispatch(getBalance());
-  }, [
-    // dispatch,
-    state.transactions,
-  ]);
+  }, [dispatch, state.transactions]);
   let lastTransactions;
   const getLastTransactions = () => {
     lastTransactions = state.transactions.slice(-3);
@@ -36,7 +33,7 @@ const HomePage = () => {
               textAlign: 'center',
             }}
           >
-            <h3 style={{ textAlign: 'center', padding: '20px' }}>
+            <h3 style={{ textAlign: 'center', padding: '10px' }}>
               Balance:{' '}
               <span
                 style={{
@@ -77,6 +74,7 @@ const HomePage = () => {
               textAlign: 'center',
             }}
           >
+            <h3>Recent Transactions</h3>
             {lastTransactions.map((item) => {
               let colourTransaction;
               colourTransaction =
@@ -117,7 +115,6 @@ const HomePage = () => {
                   </Row>
                   <Row
                     style={{
-                      // margin: 'auto',
                       width: '100%',
                       display: 'flex',
                       flexDirection: 'row',

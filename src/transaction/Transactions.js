@@ -32,7 +32,7 @@ const Transactions = () => {
           left: 0,
           marginBottom: '2000px',
           padding: '5px',
-          // color: 'white',
+          color: 'white',
         }}
         className="transactionHeader"
       >
@@ -52,7 +52,7 @@ const Transactions = () => {
           <span
             style={{
               color: 'green',
-              // fontWeight: '700',
+              fontWeight: '700',
               fontFamily: 'Carter One',
             }}
           >

@@ -33,8 +33,7 @@ a:active {
   background-color: rgb(32, 76, 117);
 }
 .transactionHeader {
-  background-color: rgb(37, 126, 210);
-  background-color: rgb(37, 126, 210);
+  background-color: rgb(129, 164, 197);
 }
 .returnArrow:hover {
   transform: scale(1.5);
