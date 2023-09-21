@@ -74,7 +74,7 @@ const HomePage = () => {
               textAlign: 'center',
             }}
           >
-            <h3>Recent Transactions</h3>
+            <h1>Recent Transactions</h1>
             {lastTransactions.map((item) => {
               let colourTransaction;
               colourTransaction =

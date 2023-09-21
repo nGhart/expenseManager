@@ -37,17 +37,9 @@ const CurrencyPage = () => {
 
   return (
     <Col style={{ textAlign: 'center' }}>
-      <h3>Euro rate</h3>
-      <p>
-        <span style={{ fontSize: '24px', fontWeight: 700 }}>1</span> USD :{' '}
-        <span style={{ fontSize: '24px', fontWeight: 700 }}>{dollarRate}</span>{' '}
-        GHC
-      </p>
-      <p>
-        <span style={{ fontSize: '24px', fontWeight: 700 }}>1</span> EUR :{' '}
-        <span style={{ fontSize: '24px', fontWeight: 700 }}>{euroRate}</span>{' '}
-        GHC
-      </p>
+      <h3>Dollar rate</h3>
+      <span>1 USD:</span>x GHC
+      <span></span>
     </Col>
   );
 };
