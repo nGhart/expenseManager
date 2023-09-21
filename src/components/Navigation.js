@@ -15,9 +15,11 @@ function Navigation() {
           top: 0,
           left: 0,
           height: '50px',
+          alignContent: 'center',
           padding: '2px',
           textAlign: 'center',
           zIndex: '1',
+          fontSize: '20px',
         }}
       >
         <Col className="navItems">

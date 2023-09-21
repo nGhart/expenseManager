@@ -32,12 +32,12 @@ const EditTransaction = (props) => {
       id: props.user.id,
     };
     dispatch(editTransaction({ id: props.user.id, newTransaction }));
-    handleClose();
+    handleEditClose();
   };
 
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleEditClose = () => setShow(false);
+  const handleEditShow = () => setShow(true);
 
   return (
     <>
@@ -50,25 +50,16 @@ const EditTransaction = (props) => {
           margin: '2px',
           border: 'none',
         }}
-        onClick={handleShow}
+        onClick={handleEditShow}
       >
         Edit
       </button>
       <Modal
         show={show}
-        onHide={handleClose}
+        onHide={handleEditClose}
         backdrop="static"
         keyboard={false}
       >
-        <div>
-          <Button
-            type="submit"
-            onClick={handleClose}
-            style={{ textAlign: 'right' }}
-          >
-            <span className="material-symbols-outlined">cancel</span>
-          </Button>
-        </div>
         <Form
           style={{
             width: '100%',
@@ -177,19 +168,19 @@ const EditTransaction = (props) => {
               value={transactions.category}
             >
               <option> Choose Category</option>
-              <hr />
+              <option></option>
               <option>EXPENSE</option>
-              <option value="Food and Drink">Food and Drink</option>
+              <option value="Food">Food</option>
               <option value="Transport">Transport</option>
               <option value="Groceries">Groceries</option>
               <option value="Utilities">Utilities</option>
               <option value="Household">Household</option>
-              <option value="Health-care">Health-care</option>
+              <option value="Healthcare">Healthcare</option>
               <option value="Vehicle">Vehicle</option>
               <option value="Loans">Loans</option>
               <option value="Entertainment">Entertainment</option>
               <option value="Miscellaneous">Miscellaneous</option>
-              <hr />
+              <option></option>
               <option>INCOME</option>
               <option value="Salary">Salary</option>
               <option value="Investment">Investment</option>
@@ -284,6 +275,14 @@ const EditTransaction = (props) => {
               border: 'none',
             }}
           >
+            <Button
+              type="submit"
+              onClick={handleEditClose}
+              style={{ width: '150px' }}
+            >
+              <span>Cancel</span>
+            </Button>
+
             <Button type="submit" style={{ width: '150px' }}>
               <span>Edit</span>
             </Button>

@@ -4,7 +4,6 @@ import { deleteTransaction } from '../appSlice/appSlice';
 import EditTransaction from './EditTransaction';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 
 const SingleTransaction = (props) => {
   const dispatch = useDispatch();
@@ -16,7 +15,7 @@ const SingleTransaction = (props) => {
 
   return (
     <Col
-      xs={12}
+      xs={11}
       lg={{ span: 6, offset: 3 }}
       key={props.user.id}
       style={{
@@ -33,6 +32,7 @@ const SingleTransaction = (props) => {
             display: 'flex',
             justifyContent: 'space-between',
             fontStyle: 'italic',
+            paddingTop: '2px',
           }}
         >
           <p style={{ padding: '5px' }}>{props.user.date}</p>

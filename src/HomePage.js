@@ -23,7 +23,9 @@ const HomePage = () => {
   return (
     <>
       <Container fluid style={{ fontFamily: 'Carter One', marginTop: '55px' }}>
-        <Row style={{ display: 'flex', justifyContent: 'center' }}>
+        <Row
+          style={{ display: 'flex', justifyContent: 'center', margin: '1px' }}
+        >
           <Col
             md={{ span: 6, offset: 3 }}
             style={{
@@ -64,7 +66,9 @@ const HomePage = () => {
             </div>
           </Col>
         </Row>
-        <Row style={{ display: 'flex', justifyContent: 'center' }}>
+        <Row
+          style={{ display: 'flex', justifyContent: 'center', margin: '1px' }}
+        >
           <Col
             md={{ span: 6, offset: 3 }}
             style={{
@@ -74,7 +78,7 @@ const HomePage = () => {
               textAlign: 'center',
             }}
           >
-            <h1>Recent Transactions</h1>
+            <h3>Recent Transactions</h3>
             {lastTransactions.map((item) => {
               let colourTransaction;
               colourTransaction =
@@ -150,7 +154,9 @@ const HomePage = () => {
             })}
           </Col>
         </Row>
-        <Row style={{ display: 'flex', justifyContent: 'center' }}>
+        <Row
+          style={{ display: 'flex', justifyContent: 'center', margin: '1px' }}
+        >
           <Col
             md={{ span: 6, offset: 3 }}
             style={{

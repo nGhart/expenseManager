@@ -73,12 +73,14 @@ const AddTransaction = () => {
           backgroundColor: 'rgb(32, 76, 117)',
           border: 'none',
           borderRadius: '50%',
+          zIndex: 5,
         }}
       >
         <span
           className="material-symbols-outlined"
           style={{
             fontSize: '45px',
+            zIndex: 1,
           }}
         >
           add
@@ -100,51 +102,6 @@ const AddTransaction = () => {
           }}
           onSubmit={handleSubmit}
         >
-          <Form.Group
-            style={{
-              display: 'flex',
-              width: '100%',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Button
-              type="submit"
-              style={{
-                width: '150px',
-                backgroundColor: 'transparent',
-                color: 'grey',
-                padding: '0',
-                border: 'none',
-              }}
-            >
-              <span
-                className="material-symbols-outlined returnArrow"
-                onClick={handleClose}
-              >
-                arrow_back
-              </span>
-            </Button>
-            <Button
-              type="submit"
-              style={{
-                width: '150px',
-                backgroundColor: 'transparent',
-                color: 'grey',
-                padding: '0',
-                border: 'none',
-              }}
-            >
-              <span
-                type="submit"
-                // style={{
-                //   fontSize: '40px',
-                // }}
-                className="material-symbols-outlined returnArrow"
-              >
-                done
-              </span>
-            </Button>
-          </Form.Group>
           <Form.Group>
             <Form.Check
               inline
@@ -246,12 +203,12 @@ const AddTransaction = () => {
               <option> Choose Category</option>
               <option></option>
               <option>EXPENSE</option>
-              <option value="Food and Drink">Food and Drink</option>
+              <option value="Food">Food and Drink</option>
               <option value="Transport">Transport</option>
               <option value="Groceries">Groceries</option>
               <option value="Utilities">Utilities</option>
               <option value="Household">Household</option>
-              <option value="Health-care">Health-care</option>
+              <option value="Healthcare">Healthcare</option>
               <option value="Vehicle">Vehicle</option>
               <option value="Loans">Loans</option>
               <option value="Entertainment">Entertainment</option>
@@ -351,6 +308,51 @@ const AddTransaction = () => {
               border: 'none',
             }}
           ></Form.Group>
+          <Form.Group
+            style={{
+              display: 'flex',
+              width: '100%',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Button
+              type="submit"
+              style={{
+                width: '150px',
+                backgroundColor: 'transparent',
+                color: 'grey',
+                padding: '0',
+                border: 'none',
+              }}
+            >
+              <span
+                className="material-symbols-outlined returnArrow"
+                onClick={handleClose}
+              >
+                arrow_back
+              </span>
+            </Button>
+            <Button
+              type="submit"
+              style={{
+                width: '150px',
+                backgroundColor: 'transparent',
+                color: 'grey',
+                padding: '0',
+                border: 'none',
+              }}
+            >
+              <span
+                type="submit"
+                // style={{
+                //   fontSize: '40px',
+                // }}
+                className="material-symbols-outlined returnArrow"
+              >
+                done
+              </span>
+            </Button>
+          </Form.Group>
         </Form>
       </Modal>
     </Row>

@@ -50,9 +50,9 @@ const ReminderPage = () => {
   };
   let sortedReminders = users.slice().sort((a, b) => (a.due > b.due ? 1 : -1));
   //.sort((a, b) => (new Date(a.due) > new Date(b.due) ? 1 : -1));
-  //let nextReminders;
-  console.log(users);
-  console.log(sortedReminders);
+
+  // console.log(users);
+  // console.log(sortedReminders);
   return (
     <Container
       style={{

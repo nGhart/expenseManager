@@ -14,10 +14,10 @@ const Transactions = () => {
 
   useEffect(() => {
     dispatch(getEachTotal());
-  }, [state]);
+  }, [dispatch]);
   useEffect(() => {
     dispatch(getBalance());
-  }, [state]);
+  }, [dispatch]);
   return (
     <>
       <section
@@ -32,7 +32,6 @@ const Transactions = () => {
           left: 0,
           marginBottom: '2000px',
           padding: '5px',
-          color: 'white',
         }}
         className="transactionHeader"
       >
